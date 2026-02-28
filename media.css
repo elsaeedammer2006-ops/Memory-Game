@@ -19,9 +19,8 @@
   .memory-game-blocks .game-block .front:before {
     font-size: 100px;
   }
-  .control-buttons span {
-    font-size: 24px;
-    padding: 10px 18px;
+ .info-container .timer {
+    font-size: 20px;
   }
 }
 
@@ -45,11 +44,8 @@
   .memory-game-blocks .game-block .front:before {
     font-size: 90px;
   }
-  .control-buttons span {
-    font-size: 20px;
-    padding: 9px 16px;
-    width: 80%;
-    text-align: center;
+  .info-container .timer {
+    font-size: 17px;
   }
 }
 
@@ -77,6 +73,9 @@
     font-size: 18px;
     padding: 8px 14px;
     width: 85%;
+  }
+  .info-container .timer {
+    font-size: 15px;
   }
 }
 
