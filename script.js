@@ -97,7 +97,7 @@ function checkBlock(fristBlock, scoundBlock) {
 
     document.getElementById("error-sound").play();
 
-    if (parseInt(triesElement.innerHTML) === 3) {
+    if (parseInt(triesElement.innerHTML) === 15) {
       setTimeout(() => {
         messageError.classList.add("active");
         setTimeout(() => {
@@ -189,4 +189,5 @@ const countdown = function () {
       countdown();
     }
   }, 1000);
+
 };
