@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: cairo, Tahoma, sans-serif;
+  background-color: #001c33ea;
+  overflow-x: hidden;
+}
+.message-start {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  background-color: rgba(1, 30, 53, 0.856);
+  color: #fff;
+  text-align: center;
+    height: 100%;
+  width: 100%;
+  z-index: 100;
+} 
+.message-start input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+.message-start button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  color: rgb(6, 86, 152);
+  font-size: 18px;
+  cursor: pointer;
+}
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 90%;
+  margin: 20px auto 0;
+  background-color: transparent;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #fff;
+  color: #fff;
+}
+.info-container .timer {
+  font-size: 24px;
+  font-weight: bold;
+}
+.memory-game-blocks {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+.memory-game-blocks.no-clicking {
+  pointer-events: none;
+}
+.memory-game-blocks .game-block {
+  height: 200px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+.memory-game-blocks .game-block .front {
+  background-color: #001c33;
+  line-height: 200px;
+}
+.memory-game-blocks .game-block .front:before {
+  content: "?";
+  color: #fff;
+  font-size: 150px;
+  font-weight: bold;
+}
+.memory-game-blocks .game-block .back {
+  background-color: #607d8b;
+  transform: rotateY(180deg);
+}
+.memory-game-blocks .game-block .back svg {
+  width: 100%;
+  height: 100%;
+}
+.memory-game-blocks .game-block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  backface-visibility: hidden;
+  box-shadow: 0 0 7px #fff;
+}
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+/* Message Succcful */
+.message {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 23px;
+  text-align: center;
+  z-index: 100;
+}
+.message.success {
+  border: 1px solid #08530b;
+  background-color: #08530b;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+}
+.message.success.active {
+  opacity: 1;
+  visibility: visible;
+}
+.message.error {
+  border: 1px solid #6d0f08;
+  background-color: #6d0f08;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+}
+.message.error.active {
+  opacity: 1;
+  visibility: visible;
+}
